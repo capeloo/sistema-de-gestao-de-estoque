@@ -1,7 +1,8 @@
 public class Cliente extends Usuario {
+	private static int idCliente = 0;
 
-	public Cliente(Integer ID, String nome, String email) {
-		this.ID = ID;
+	public Cliente(String nome, String email) {
+		this.id = idCliente++;
 		this.nome = nome;
 		this.email = email;
 	}
@@ -13,5 +14,9 @@ public class Cliente extends Usuario {
 	
 	public String toString() {
 		return "É o cliente " + this.nome + " de e-mail " + this.email;
+	}
+	
+	public String getNome() {
+		return nome;
 	}
 }

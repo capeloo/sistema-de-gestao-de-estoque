@@ -2,11 +2,24 @@
 public class App {
 
 	public static void main(String[] args) {
-		Funcionario caio = new Funcionario(0, "Caio Capêlo", "caiocapelo@alu.ufc.br", null, null);
-		Cliente matheus = new Cliente(0, "Matheus Alvino", "mateuzim@alu.ufc.br");
+		Cliente Alejandro = new Cliente("Bruno Alejandro", "brunim_ale@gmail.com");
+		Filial Parquelândia = new Filial();
+		Fornecedor Amazon = new Fornecedor();
+		Funcionario Matuê = new Funcionario("Matheus Brasileiro", "matheuzim420@gmail.com", 2000.00, "Caixa");
+		Estoque estoque = new Estoque();
 		
-		System.out.println(caio.toString());
-		System.out.println(matheus.toString());
+		Produto farinha = new Produto("Farinha Dona Benta", 8.00, 10, Amazon);
+		Produto feijao = new Produto("Feijão Carioca", 10.00, 6, Amazon);
+		
+		estoque.adicionarProduto(farinha);
+		estoque.adicionarProduto(feijao);
+		
+		Venda venda = new Venda("24/09/2024", Alejandro, Parquelândia, Matuê, estoque);
+		venda.adicionarProduto("Farinha Dona Benta", 2);
+		venda.adicionarProduto("Feijão Carioca", 3);
+		
+		venda.finalizarVenda();
+		System.out.println("Valor total: " + venda.getValorTotal());
+		
 	}
-
 }

@@ -1,10 +1,11 @@
 public class Funcionario extends Usuario {
 	private Double salario;
 	private String cargo;
-	public static Integer totalFuncionarios;
+	private static int totalFuncionarios;
+	private static int idFuncionario = 0;
 	
-	public Funcionario(Integer ID, String nome, String email, Double salario, String cargo) {
-		this.ID = ID;
+	public Funcionario(String nome, String email, Double salario, String cargo) {
+		this.id = idFuncionario++;
 		this.nome = nome;
 		this.email = email;
 		this.salario = salario;

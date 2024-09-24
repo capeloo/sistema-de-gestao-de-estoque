@@ -1,5 +1,5 @@
 public abstract class Usuario {
-	protected Integer ID;
+	protected int id;
 	protected String nome;
 	protected String email;
 	
