@@ -19,7 +19,11 @@ public class Produto {
 		this.categorias = new ArrayList<>();
 		this.fornecedor = fornecedor;
 	}
-	
+
+	// Método estático para criar um produto genérico
+	public static Produto criarProdutoGenerico() {
+		return new Produto("Produto Genérico", 5.00, 50, new Fornecedor());
+	}
 	public void adicionarCategoria(Categoria categoria) {
 		categorias.add(categoria);
 	}
@@ -43,17 +47,13 @@ public class Produto {
 	public void reduzirEstoque(int quantidade) {
 		if(quantidade <= quantidadeEstoque) {
 			this.quantidadeEstoque -= quantidade;
+			System.out.println("Estoque de " + nome + " atualizado. Quantidade restante: " + quantidadeEstoque);
+
 		} else {
 			System.out.println("Estoque insuficiente para " + nome);
 		}
 	}
-	
 	public boolean verificarEstoque(int quantidade) {
 		return quantidade <= quantidadeEstoque;
 	}
-
-	
-	
-	
-	
 }
