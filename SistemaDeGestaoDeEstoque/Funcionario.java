@@ -13,10 +13,7 @@ public class Funcionario extends Usuario {
 	}
 
 	@Override
-	protected void getDados() {
-
-
-	}
+	protected void getDados() {}
 	
 	public static void setTotalFuncionarios(Integer totalFuncionarios) {
 		Funcionario.totalFuncionarios = totalFuncionarios;
